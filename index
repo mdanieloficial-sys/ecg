@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellence Cleaning Group | Trust, Precision, Excellence</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #5b7e9b;
+            --dark-navy: #1f3647;
+            --gold-accent: #d8b273;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header / Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--gold-accent);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: var(--gold-accent);
+            font-size: 0.9rem;
+        }
+
+        .logo-icon span {
+            transform: rotate(-45deg);
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--dark-navy);
+            line-height: 1.1;
+        }
+
+        .logo-text span {
+            display: block;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark-navy);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn-nav {
+            background-color: var(--dark-navy);
+            color: var(--white) !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-blue);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 180px 2rem 100px;
+            overflow: hidden;
+        }
+
+        /* Diagonal Accent Graphic derived from business card */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10%;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            transform: skewX(-25deg);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p.tagline {
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content p.description {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--gold-accent);
+            color: var(--dark-navy);
+            padding: 0.9rem 2rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--gold-accent);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            padding: 0.9rem 2rem;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--dark-navy);
+        }
+
+        .hero-card {
+            background: var(--white);
+            color: var(--text-color);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border-top: 5px solid var(--gold-accent);
+        }
+
+        .hero-card h3 {
+            color: var(--dark-navy);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--dark-navy);
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 0.9rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-blue);
+        }
+
+        /* --- Values Section --- */
+        .values {
+            background-color: var(--light-bg);
+            padding: 5rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title div {
+            width: 60px;
+            height: 3px;
+            background: var(--gold-accent);
+            margin: 0 auto;
+        }
+
+        .values-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(91, 126, 155, 0.1);
+            color: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .value-card h3 {
+            color: var(--dark-navy);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- Services Section --- */
+        .services {
+            padding: 5rem 2rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            border: 1px solid #eef2f5;
+            border-radius: 6px;
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-blue);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .service-card h3 {
+            color: var(--dark-navy);
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- Call To Action Banner --- */
+        .cta-banner {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-banner h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .phone-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold-accent);
+            margin: 1rem 0;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #162633;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 2rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand .logo-text {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Can be expanded into a mobile menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon"><span>ECG</span></div>
+                <div class="logo-text">
+                    EXCELLENCE
+                    <span>CLEANING GROUP</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:+000000000000" class="btn-nav">+00 0000 000 000</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="tagline">TRUST, PRECISION, EXCELLENCE</p>
+                <h1>Professional Cleaning Services You Can Depend On</h1>
+                <p class="description">
+                    Delivering top-tier residential and commercial cleaning solutions crafted with meticulous attention to detail and unmatched professional reliability.
+                </p>
+                <div class="cta-group">
+                    <a href="#book" class="btn-primary">Book Appointment</a>
+                    <a href="#services" class="btn-secondary">Our Services</a>
+                </div>
+            </div>
+
+            <!-- Booking Card -->
+            <div class="hero-card" id="book">
+                <h3>Book Your Appointment</h3>
+                <form onsubmit="event.preventDefault(); alert('Booking request submitted!');">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+00 0000 000 000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="commercial">Commercial Cleaning</option>
+                            <option value="residential">Residential Cleaning</option>
+                            <option value="deep">Deep Cleaning</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Values -->
+    <section class="values" id="about">
+        <div class="section-title">
+            <h2>Why Choose Us</h2>
+            <div></div>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3>Trust</h3>
+                <p>Fully vetted, background-checked, and reliable cleaning professionals trained to respect your space and privacy.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Precision</h3>
+                <p>Every corner, edge, and surface cleaned with systematic detail to ensure immaculate standards every single time.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fa-solid fa-award"></i></div>
+                <h3>Excellence</h3>
+                <p>Premium grade products, equipment, and service designed to consistently exceed client expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <div></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Commercial Cleaning</h3>
+                <p>Customized maintenance schedules for offices, retail, and corporate environments that reflect professionalism.</p>
+            </div>
+            <div class="service-card">
+                <h3>Residential Cleaning</h3>
+                <p>Scheduled house cleaning routines tailored to keep your living space pristine, healthy, and inviting.</p>
+            </div>
+            <div class="service-card">
+                <h3>Deep Cleaning</h3>
+                <p>Thorough top-to-bottom detail cleaning ideal for seasonal resets, move-ins, or post-renovation projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner" id="contact">
+        <h2>Ready for an Immaculate Space?</h2>
+        <p>Call us directly to schedule a walkthrough or discuss custom pricing.</p>
+        <span class="phone-number">+00 0000 000 000</span>
+        <a href="#book" class="btn-primary">Schedule Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo-text">
+                    EXCELLENCE
+                    <span style="color: var(--primary-blue)">CLEANING GROUP</span>
+                </div>
+                <p>Trust, Precision, Excellence — Premium cleaning services customized for residential and commercial clients.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--white); margin-bottom: 1rem;">Quick Links</h4>
+                <p><a href="#about">About Us</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#book">Book Appointment</a></p>
+            </div>
+            <div>
+                <h4 style="color: var(--white); margin-bottom: 1rem;">Contact</h4>
+                <p><i class="fa-solid fa-phone"></i> +00 0000 000 000</p>
+                <p><i class="fa-solid fa-envelope"></i> info@excellencecleaning.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Excellence Cleaning Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
